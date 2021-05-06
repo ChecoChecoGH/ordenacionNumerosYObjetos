@@ -17,8 +17,7 @@ Ordénalos por Edad.
 
 Ordénalos alfabéticamente por nombre.
 
-Ordénalos por número de vocales.
-
+Ordénalos por longitud del nombre.
 */
 
 const val TAMNUMEROS = 100-1
@@ -70,11 +69,12 @@ fun main() {
     listaAlumnosComparables.sortBy { it.nombre }
     listaAlumnosComparables.forEach { println(it) }
 
+    println("\nAlumnos ordenados por longitud de nombre: ")
+    listaAlumnosComparables.sort()
 
 }
 
 class AlumnosComparables(var nombre : String, var edad : Int) : Comparable<AlumnosComparables> {
-    val vocales = mutableListOf('A', 'E', 'I', 'O', 'U')
     override fun compareTo(other: AlumnosComparables): Int {
         return this.nombre.length - other.nombre.length
     }
