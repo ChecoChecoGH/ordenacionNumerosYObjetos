@@ -34,30 +34,34 @@ fun main() {
 
     for(i in 0..TAMNUMEROS){ listaNumeros.add((NUMEROMINIMO..NUMEROMAXIMO).random()) }
 
-    listaNumeros.sort()
+
     print("listaNumeros con sort: ")
+    listaNumeros.sort()
     listaNumeros.forEach { print("$it, ") }
     println()
 
-    listaNumeros.sortDescending()
+
     print("listaNumeros con sortDescending: ")
+    listaNumeros.sortDescending()
     listaNumeros.forEach { print("$it, ") }
     println()
 
-    val listaNuevaMenoraMayor = listaNumeros.sorted().toMutableList()
+
     print("Nueva lista a partir de listaNumeros con sorted: ")
+    val listaNuevaMenoraMayor = listaNumeros.sorted().toMutableList()
     listaNuevaMenoraMayor.forEach { print("$it, ") }
     println()
 
-    val listaNuevaMayoraMenor = listaNumeros.sortedDescending().toMutableList()
+
     print("Nueva lista a partir de listaNumeros con sortedDescending: ")
+    val listaNuevaMayoraMenor = listaNumeros.sortedDescending().toMutableList()
     listaNuevaMayoraMenor.forEach { print("$it, ") }
     println()
 
     val listaAlumnosComparables = mutableListOf<AlumnosComparables>()
 
     for(i in 0..TAMALUMNOS){
-        val alumnoComparable =  AlumnosComparables ("Alumno "+(1..200).random(), (EDADMINIMO..EDADMAXIMO).random())
+        val alumnoComparable =  AlumnosComparables ("Alumno "+(1..10000).random(), (EDADMINIMO..EDADMAXIMO).random())
         listaAlumnosComparables.add(alumnoComparable)
     }
 
@@ -71,6 +75,7 @@ fun main() {
 
     println("\nAlumnos ordenados por longitud de nombre: ")
     listaAlumnosComparables.sort()
+    listaAlumnosComparables.forEach { println(it) }
 
 }
 
@@ -82,8 +87,5 @@ class AlumnosComparables(var nombre : String, var edad : Int) : Comparable<Alumn
     override fun toString(): String {
         return "Nombre: $nombre, edad: $edad"
     }
-
-
-
 }
 
